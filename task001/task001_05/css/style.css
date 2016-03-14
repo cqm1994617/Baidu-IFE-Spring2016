@@ -103,6 +103,7 @@
 }
 
 .pages {
+	overflow: auto;
 	border: 1px solid #ccc;
 	padding: 20px;
 	background-color: #fff;
@@ -176,6 +177,8 @@
 }
 
 .pages > .imgUl > li {
+	float: left;
+	margin-right: 15px;
 	margin-bottom: 15px;
 }
 
