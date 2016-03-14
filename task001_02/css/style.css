@@ -1,0 +1,185 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+::-webkit-input-placeholder{
+	color: #111;
+}
+::-moz-placeholder{
+	color: #111;
+}
+::-ms-input-placeholder{
+	color: #111;
+}
+
+.head {
+	height: 65px;
+	background-color: #444;
+}
+
+.logo {
+	float: left;
+	margin-left: 40px;
+	margin-top: 10px;
+	width: 120px;
+}
+
+.logo:after .logo>img {
+	width: 100%;
+}
+
+.ulList {
+	float: right;
+	margin-right: 25px;
+	padding-top: 25px;
+}
+
+.ulList > ul {
+	list-style-type: none;
+}
+
+.ulList > ul >li {
+	position: relative;
+	float: left;
+	color: #fff;
+	margin-left: 30px;
+	cursor: pointer;
+	transition: .3s all;
+}
+
+.ulList > ul > li:before {
+	content: "";
+	display: block;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: #000;
+	position: absolute;
+	top: 5px;
+	left: -12px;
+}
+
+.ulList > ul li:last-of-type {
+	color: #aaa;
+}
+
+.ulList > ul >li:hover {
+	color: #aaa;
+}
+
+.ulList > ul:after {
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	clear: both;
+}
+
+.container {
+	background-color: #ddd;
+	padding: 15px;
+}
+
+.pages {
+	border: 1px solid #ccc;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 1px 1px 1px #888;
+	margin-bottom: 20px;
+}
+
+.pages:last-of-type {
+	margin-top: 40px;
+}
+
+.pages > h1 {
+	font-size: 28px;
+	line-height: 1.5;
+}
+
+.pages > h2 {
+	font-size: 20px;
+	line-height: 2.5;
+}
+
+.pages > h2,
+.pages > span {
+	color: #777;
+}
+
+.pages > p {
+	margin-top: 10px;
+	line-height: 1.5;
+	text-indent: 2em;
+}
+
+.pagePicture {
+	margin: 15px 0px;
+}
+
+.pages > ul {
+	list-style-type: none;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.pages > ul > li {
+	line-height: 1.5;
+}
+
+.imgBox {
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
+.imgBox > p {
+	font-size: 12px;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.imgBox > img {
+	width: 100%;
+}
+
+.imgUl {
+	margin-top: 15px;
+}
+
+.pages > .imgUl > li {
+	margin-bottom: 15px;
+}
+
+.pages > ol {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: 40px;
+}
+
+.pages > .noIndent {
+	text-indent: 0;
+}
+
+.pages >table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.pages > table th {
+	text-align: left;
+	background-color: #000;
+	color: #fff
+}
+
+.pages > table th,
+.pages > table td {
+	padding: 5px;
+}
+
+.pages > table tr:last-of-type {
+	background-color: #bbb;
+	font-weight: bold;
+}
