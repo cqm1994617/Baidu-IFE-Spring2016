@@ -31,6 +31,12 @@
 	width: 100%;
 }
 
+@media screen and (max-width: 680px) {
+	.ulList {
+		display: none;
+	}
+}
+
 .ulList {
 	float: right;
 	margin-right: 25px;
@@ -81,6 +87,19 @@
 .container {
 	background-color: #ddd;
 	padding: 15px;
+	overflow: auto;
+}
+
+.leftContainer {
+	float: left;
+	margin-right: 400px;
+}
+
+.leftContainer:after {
+	clear: both;
+	content: "";
+	display: block;
+	width: 0;
 }
 
 .pages {
@@ -117,7 +136,12 @@
 }
 
 .pagePicture {
+	max-width: 525px;
 	margin: 15px 0px;
+}
+
+.pagePicture>img {
+	width: 100%;
 }
 
 .pages > ul {
@@ -131,8 +155,8 @@
 }
 
 .imgBox {
-	width: 100px;
-	height: 100px;
+	max-width: 100px;
+	max-height: 100px;
 	padding: 10px;
 	border: 1px solid #ccc;
 }
@@ -186,7 +210,13 @@
 	font-weight: bold;
 }
 
-.pages > .formTitle {
+.rightContainer {
+	width: 340px;
+	margin-left: -385px;
+	float: left;
+}
+
+.rightContainer > .formTitle {
 	line-height: 1.5;
 	padding-left: 15px;
 	border-left: 3px solid #ccc;
@@ -194,28 +224,42 @@
 	font-size: 17px;
 }
 
-.pages > form > div {
+.border {
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 1px #888;
+	background-color: #fff;
+	padding: 20px;
+}
+
+@media screen and (max-width: 640px) {
+	.rightContainer {
+		display: none;
+	}
+}
+
+.rightContainer > form > div {
 	margin: 15px 0px;
 }
 
-.pages > form >span {
+.rightContainer > form >span {
 	margin-left: 35.5%;
 	font-size: 13px;
 	color: #ccc;
 	margin-bottom: 20px;
 }
 
-.pages > form > div > label {
+.rightContainer > form > div > label {
 	display: inline-block;
 	margin-right: 0.5%;
 	width: 35%;
 	text-align: right;
+	font-size: 12px;
 	vertical-align: top;
 }
 
-.pages > form > div > textarea {
-	width: 50%;
-	height: 200px;
+.rightContainer > form > div > textarea {
+	width: 55%;
+	height: 100px;
 }
 
 .btn {
