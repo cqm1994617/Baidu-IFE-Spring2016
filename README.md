@@ -56,4 +56,5 @@
 - [慕课HTML+CSS基础教程视频](http://www.imooc.com/learn/9)
 
 
-**网站链接: **http://ife.baidu.com/task/detail?taskId=1
+
+[百度前端技术学院](http://ife.baidu.com/task/detail?taskId=1)
