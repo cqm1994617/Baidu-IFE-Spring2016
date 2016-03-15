@@ -244,6 +244,9 @@
 	.rightContainer {
 		display: none;
 	}
+	.leftContainer {
+		margin-right: 0px;
+	}
 }
 
 .rightContainer > form > div {
