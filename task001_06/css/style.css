@@ -446,12 +446,13 @@ body {
 }
 
 .front-hello > p > span:first-of-type {
-	margin-left: -30px;
+	margin-top: 0px;
+	margin-left: -20px;
 	float: left;
 }
 
 .front-hello > p > span:last-of-type {
-	margin-top: 10px;
+	margin-top: 20px;
 	float: right;
 }
 
