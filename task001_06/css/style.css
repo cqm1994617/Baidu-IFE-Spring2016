@@ -375,10 +375,6 @@ body {
 	border-bottom: 8px solid #10456b;
 }
 
-.front-hello > ul > li > span {
-	letter-spacing: 0.1em;
-}
-
 .front-hello > ul > li > .front-span {
 	letter-spacing: 0;
 	font-style: italic;
