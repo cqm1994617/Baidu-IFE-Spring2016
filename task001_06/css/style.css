@@ -372,7 +372,21 @@ ul {
 	border-bottom: 10px solid #11456B;
 }
 
-.front-list > li > span {
+
+.front-list > li:after{
+	content:"";
+	display: block;
+	clear: both;
+}
+.list-1{
+	line-height: 2.5;
+	float: left;
+	overflow: hidden;
+	width: 340px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.list-2{
 	float: right;
 	line-height: 2.5;
 }
@@ -439,15 +453,22 @@ ul {
 	line-height: 10px;
 }
 
+.left, .right{
+	width: 40px;
+	height: 1px;
+	position: relative;
+}
 .left {
-	margin-left: -25px;
+	right: 35px;
+	top: 10px;
 	float: left;
 }
 
 .right {
 	float: right;
-	margin-right: 15px;
-	margin-top: 30px;
+	position: relative;
+	top: 30px;
+	right: 20px;
 }
 
 .foot {
