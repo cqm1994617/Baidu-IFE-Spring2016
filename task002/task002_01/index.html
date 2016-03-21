@@ -23,26 +23,24 @@
 				在事件处理函数中
 				获取aqi-input输入的值，并显示在aqi-display中
 				*/
+				
+				var eventUtil = {
+					addHandler: function(ele, type, handler){
+						if(ele.addEventListener) {
+							ele.addEventListener(type, handler);
+						} else if (ele.attachEvent) {
+							ele.attachEvent('on' + type, handler);
+						} else {
+							ele.onclick['on' + type] = handler;
+						}
+					}
+				}
+
 				var btn = document.getElementById('button');
 				var input = document.getElementById('aqi-input');
 				var span = document.getElementById('aqi-display');
-				if(btn.addEventListener){
-					btn.addEventListener('click', function(){
-						changeValue(btn, input, span)
-					})
-				}
-				else if(btn.attachEvent){
-					btn.attachEvent('onclick', function(){
-						changeValue(btn, input, span)
-					})
-				}
-				else {
-					btn.onclick = function(){
-						changeValue(btn, input, span)
-					}
-				}
-				
-				function changeValue(btn, input, span) {
+
+				function changeValue() {
 					var value = input.value;
 					if(value.length == 0){
 						alert('请输入信息');
@@ -50,6 +48,8 @@
 						span.innerHTML = value;	
 					}
 				}
+
+				eventUtil.addHandler(btn, 'click', changeValue)
 			})();
 		</script>
 	</body>
