@@ -63,15 +63,14 @@
 		value = value.toLowerCase();
 		if (value == "go") {
 			myMove.go();
-		}
-		if (value == "tun left") {
+		} else if (value == "tun left") {
 			myMove.turnLeft();
-		}
-		if (value == "tun right") {
+		} else if (value == "tun right") {
 			myMove.turnRight();
-		}
-		if (value == "tun back") {
+		} else if (value == "tun back") {
 			myMove.turnBack();
+		} else{
+			alert("命令出错！请输入以下命令: \n go:前进 \n tun left:左转 \n tun right:右转 \n tun back:180度右转")
 		}
 	}
 	
