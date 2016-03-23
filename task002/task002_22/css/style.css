@@ -1,0 +1,105 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.container:after {
+	content: "";
+	display: block;
+	width: 0;
+	clear: both;
+}
+
+.x-num {
+	padding-left: 52px;
+}
+
+.x-num > li {
+	float: left;
+	width: 40px;
+	padding-top: 30px;
+	padding-bottom: 2px;
+	text-align: center;
+	vertical-align: bottom;
+}
+
+.x-num:after {
+	content: "";
+	display: block;
+	width: 0;
+	clear: both;
+}
+
+.y-num {
+	float: left;
+	padding-left: 30px;
+	padding-right: 3px;
+}
+
+.y-num > li {
+	padding-top: 10px;
+	height: 30px;
+	text-align: center;
+}
+
+.mapBox {
+	float: left;
+	width: 39px;
+	height: 39px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.map {
+	position: relative;
+	float: left;
+	width: 400px;
+	height: 400px;
+	border: 1px solid #000;
+}
+
+.mover {
+	position: absolute;
+	width: 39px;
+	height: 39px;
+	background: red;
+	z-index: 999;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+
+.mover:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 39px;
+	height: 10px;
+	background: blue;
+}
+
+.control {
+	margin-left: 50px;
+	margin-top: 30px;
+}
+
+.control > input {
+	width: 150px;
+	height: 20px;
+}
+
+.control button {
+	cursor: pointer;
+	margin-left: 10px;
+	width: 60px;
+	height: 22px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+.control-group{
+	margin-top: 20px;
+	margin-left: -10px;
+}
