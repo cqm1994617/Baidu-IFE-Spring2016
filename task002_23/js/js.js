@@ -14,7 +14,8 @@
 (function() {
 	var mover = document.getElementById('mover');
 	var btn = document.getElementById('btn');
-	var input = document.getElementById('input');
+	var rowId = document.getElementById('rowId');
+	var input = document.getElementById("area");
 
 	var myMove = {
 		face: 0,
@@ -89,7 +90,7 @@
 		movTop: function() {
 			mover.style.transform = "rotate(0deg)";
 			this.goTop();
-			this.face = 0;
+			this.face = 0
 		},
 		movBottom: function() {
 			mover.style.transform = "rotate(180deg)";
@@ -98,44 +99,110 @@
 		}
 	};
 
-	function main() {
-		var value = input.value;
-		value = value.toLowerCase();
-		if (value == "go") {
-			myMove.go();
-		} else if (value == "tun left") {
-			myMove.turnLeft();
-		} else if (value == "tun right") {
-			myMove.turnRight();
-		} else if (value == "tun back") {
-			myMove.turnBack();
-		} else if (value == "tra lef") {
-			myMove.goLeft();
-		} else if (value == "tra top") {
-			myMove.goTop();
-		} else if (value == "tra rig") {
-			myMove.goRight();
-		} else if (value == "tra bot") {
-			myMove.goBack();
-		} else if (value == "mov lef") {
-			myMove.movLeft();
-		} else if (value == "mov rig") {
-			myMove.movRight();
-		} else if (value=="mov top") {
-			myMove.movTop();
-		} else if (value == "mov bot") {
-			myMove.movBottom();
-		} else {
-			alert("命令出错！");
-		}
-	}
-
-	btn.addEventListener('click', main);
-
-	document.addEventListener('keydown', function(e) {
-		if (e.keyCode == 13 && input == document.activeElement) {
-			main()
-		}
+	input.addEventListener('keyup', function() {
+		rowHasChange();
+	})
+	input.addEventListener('scroll', function() {
+		var top = input.scrollTop;
+		rowId.scrollTop = top;
 	})
 
+	function rowHasChange() {
+		var value = input.value;
+		var rows = value.split("\n");
+		var arr = [];
+		var top = input.scrollTop;
+		for (var i = 0; i < rows.length; i++) {
+			arr.push("<div class='error'>" + (i + 1) + "</div>");
+		}
+		rowId.innerHTML = arr.join("");
+		rowId.scrollTop = top;
+	}
+	
+	function nameCheck() {
+		var value = input.value;
+		value = value.toLowerCase();
+		var arr = value.split("\n");
+		var i = 1;	//命令条数
+		command(arr[0], 0);
+		var timer = setInterval(function(){
+			if(i<arr.length){
+				command(arr[i], i);	//执行指定命令条
+				++i;
+			} else {
+				clearInterval(timer)
+			}
+		}, 500)
+		
+	}
+
+	function command(cmd, i) {
+		var arr = cmd.split(" ");
+		var finalEle = arr[arr.length-1];
+		if(!isNaN(finalEle)){	//最后一位是数字
+			arr.pop();
+			var currentCmd = arr.join(" ");
+			main(currentCmd, finalEle, i);
+		} else {
+			var currentCmd = arr.join(" ");
+			main(currentCmd, 1, i)
+		}
+	}
+	
+	function main(currentCmd, num, i){	//num代表命令执行次数，i代表这是第几条命令
+		if (currentCmd == "go") {
+			for(var i=0; i<num; i++){
+				myMove.go();
+			}
+		} else if (currentCmd == "tun left") {
+			for(var i=0; i<num; i++){
+				myMove.turnLeft();
+			}
+		} else if (currentCmd == "tun right") {
+			for(var i=0; i<num; i++){
+				myMove.turnRight();
+			}
+		} else if (currentCmd == "tun back") {
+			for(var i=0; i<num; i++){
+				myMove.turnBack();
+			}
+		} else if (currentCmd == "tra lef") {
+			for(var i=0; i<num; i++){
+				myMove.goLeft();
+			}
+		} else if (currentCmd == "tra top") {
+			for(var i=0; i<num; i++){
+				myMove.goTop();
+			}
+		} else if (currentCmd == "tra rig") {
+			for(var i=0; i<num; i++){
+				myMove.goRight();
+			}
+		} else if (currentCmd == "tra bot") {
+			for(var i=0; i<num; i++){
+				myMove.goBack();
+			}
+		} else if (currentCmd == "mov lef") {
+			for(var i=0; i<num; i++){
+				myMove.movLeft();
+			}
+		} else if (currentCmd == "mov rig") {
+			for(var i=0; i<num; i++){
+				myMove.movRight();
+			}
+		} else if (currentCmd=="mov top") {
+			for(var i=0; i<num; i++){
+				myMove.movTop();
+			}
+		} else if (currentCmd == "mov bot") {
+			for(var i=0; i<num; i++){
+				myMove.movBottom();
+			}
+		} else {
+			console.log(i)
+			var err = rowId.getElementsByTagName('div');
+			err[i].style.backgroundColor = "red";
+		}
+	}
+	btn.addEventListener('click', nameCheck);
 })()
