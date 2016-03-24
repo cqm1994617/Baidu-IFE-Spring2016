@@ -155,15 +155,15 @@
 			for(var i=0; i<num; i++){
 				myMove.go();
 			}
-		} else if (currentCmd == "tun left") {
+		} else if (currentCmd == "tun lef") {
 			for(var i=0; i<num; i++){
 				myMove.turnLeft();
 			}
-		} else if (currentCmd == "tun right") {
+		} else if (currentCmd == "tun rig") {
 			for(var i=0; i<num; i++){
 				myMove.turnRight();
 			}
-		} else if (currentCmd == "tun back") {
+		} else if (currentCmd == "tun bac") {
 			for(var i=0; i<num; i++){
 				myMove.turnBack();
 			}
