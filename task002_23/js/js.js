@@ -16,6 +16,7 @@
 	var btn = document.getElementById('btn');
 	var rowId = document.getElementById('rowId');
 	var input = document.getElementById("area");
+	var refresh = document.getElementById("refresh");
 
 	var myMove = {
 		face: 0,
@@ -204,5 +205,10 @@
 			err[i].style.backgroundColor = "red";
 		}
 	}
+
 	btn.addEventListener('click', nameCheck);
+	refresh.addEventListener("click", function(){
+		input.value="";
+		rowId.innerHTML = ""
+	})
 })()
