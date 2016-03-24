@@ -37,12 +37,36 @@
 			<div id="map" class="map"></div>
 		</div>
 
+		<div class="introduction">
+			<ol>
+				<li>在输入框中允许输入如下指令，按下按钮后，使得正方形做相应动作</li>
+				<li>移动不能超出格子空间</li>
+				<li>GO：向蓝色边所面向的方向前进一格（一格等同于正方形的边长</li>
+				<li>TUN LEF：向左转（逆时针旋转90度）</li>
+				<li>TUN RIG：向右转（顺时针旋转90度）</li>
+				<li>TUN BAC：向右转（旋转180度）</li>
+				<li>TRA LEF：向屏幕的左侧移动一格，方向不变</li>
+				<li>TRA TOP：向屏幕的上面移动一格，方向不变</li>
+				<li>TRA RIG：向屏幕的右侧移动一格，方向不变</li>
+				<li>TRA BOT：向屏幕的下面移动一格，方向不变</li>
+				<li>MOV LEF：方向转向屏幕左侧，并向屏幕的左侧移动一格</li>
+				<li>MOV TOP：方向转向屏幕上面，向屏幕的上面移动一格</li>
+				<li>MOV RIG：方向转向屏幕右侧，向屏幕的右侧移动一格</li>
+				<li>MOV BOT：方向转向屏幕下面，向屏幕的下面移动一格</li>
+				<li>GO 3：向当前方向前进三格</li>
+				<li>TRA TOP 2：向屏幕上方平移两格</li>
+				<li>MOV RIG 4：方向转向屏幕右侧，向屏幕的右侧移动四格</li>
+
+			</ol>
+		</div>
+
 		<div class="control">
+			<button class="btn" id="btn">执行</button>
+			<button class="btn" id="refresh">refresh</button>
 			<div class="control-group">
 				<div id="rowId" class="rowId">
 				</div>
 				<textarea id="area" rows="5"></textarea>
-				<button id="btn">执行</button>
 			</div>
 		</div>
 
