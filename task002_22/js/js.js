@@ -103,11 +103,11 @@
 		value = value.toLowerCase();
 		if (value == "go") {
 			myMove.go();
-		} else if (value == "tun left") {
+		} else if (value == "tun lef") {
 			myMove.turnLeft();
-		} else if (value == "tun right") {
+		} else if (value == "tun rig") {
 			myMove.turnRight();
-		} else if (value == "tun back") {
+		} else if (value == "tun bac") {
 			myMove.turnBack();
 		} else if (value == "tra lef") {
 			myMove.goLeft();
